@@ -4,6 +4,8 @@ exports.typeDefs = gql`
   type Query {
     products: [Product!]!
     product(id: ID!): Product!
+    categories: [Category!]!
+    category(id: ID!): Category
   }
 
   type Product {
@@ -14,5 +16,10 @@ exports.typeDefs = gql`
     price: Float
     image: String
     onSale: Boolean
+    category: Category
+  }
+  type Category {
+    id: ID!
+    name: String!
   }
 `;
